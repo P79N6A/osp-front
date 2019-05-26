@@ -1,29 +1,62 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<!--<el-scrollbar>
+      <transition name="move" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </el-scrollbar> -->
+		<transition name="move" mode="out-in"><router-view></router-view></transition>
+	</div>
 </template>
 
-<style lang="scss">
+<script>
+import HelloWorld from './components/HelloWorld.vue';
+
+export default {
+	name: 'app',
+	components: {
+		HelloWorld
+	}
+};
+</script>
+
+<style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+	padding: 0;
+	margin-top: 0;
+	min-height: auto;
+	height: 100%;
+	overflow: hidden;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
+
+.el-scrollbar {
+	height: 100%;
+}
+.el-scrollbar__wrap {
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+/**
+::-webkit-scrollbar {
+    width: 13px;
+    background-color: rgba(255,255,255,.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #dbdbdb;
+    background-clip: content-box;
+}
+ 
+::selection {
+    background: rgba(255, 0, 0, .7);
+    color: white;
+}*/
 </style>

@@ -16,3 +16,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.el-scrollbar{
+  height: 100%;
+}
+.el-scrollbar__wrap{
+  overflow: scroll;
+  overflow-x:hidden
+}
+</style>
+
